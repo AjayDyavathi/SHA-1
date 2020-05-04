@@ -174,17 +174,17 @@ class SHA1():
         hex_hash = self.bin2hex(hashed)
         return hex_hash
 
+if __name__ == '__main__':
+    hasher = SHA1()                 # initializing a SHA1 object
+    # test words
+    hash_these = [ 'Hello World!',
+                   'Hello world!',
+                   'Hello World,',
+                   'Hello world,',
+                   'hello world ',
+                   'hello w0rld*',
+                   'hello world.']
 
-hasher = SHA1()                 # initializing a SHA1 object
-# test words
-hash_these = [ 'Hello World!',
-               'Hello world!',
-               'Hello World,',
-               'Hello world,',
-               'hello world ',
-               'hello w0rld*',
-               'hello world.']
-
-for word in hash_these:
-    hashed = hasher.compute_hash(word)
-    print(word, hashed)
+    for word in hash_these:
+        hashed = hasher.compute_hash(word)
+        print(word, hashed)
